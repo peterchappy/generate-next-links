@@ -43,4 +43,12 @@ describe("Node Test Suite", () => {
       isDir: false,
     });
   });
+    test("can handle index.page child", () => {
+    const id = nodeMap.handleChild("index.page", 0);
+    expect(nodeMap.getNode(id)).toEqual({
+      name: "",
+      parentId: 0,
+      isDir: false,
+    });
+  });
 });
