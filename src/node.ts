@@ -43,7 +43,7 @@ export class NodeMap {
   public handleChild(child: string, parentId: MapValue["parentId"]): number {
     if (child !== "") {
       return this.setNode({
-        name: child === "index" ? "" : child,
+        name: child.includes("index") ? "" : child,
         isDir: false,
         parentId,
       });
