@@ -43,7 +43,7 @@ export function cleanLinkName(name: string, doConvertCamelCase: boolean) {
     }
   );
   return clean(target, (e, i) => {
-    if (e === "/" && i > 0) {
+    if ((e === "/" && i > 0) || e === ".") {
       return "_";
     } else if ((e === "/" && i === 0) || ["[", "]", " ", "-"].includes(e)) {
       return "";
@@ -58,15 +58,16 @@ export function buildLinkPath(
   link = ""
 ): string {
   if (node) {
+    const name = node.name.replace('.page', "")
     if (node.parentId !== null) {
       return buildLinkPath(
         nodeMap.getNode(node.parentId),
         nodeMap,
-        `/${node.name}${link}`
+        `/${name}${link}`
       );
     } else {
-      if (node.name !== "/") {
-        link = node.name + link;
+      if (name !== "/") {
+        link = name + link;
       }
     }
   }

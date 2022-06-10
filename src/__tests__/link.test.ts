@@ -15,6 +15,7 @@ describe("Link Test Suite", () => {
     ["/admin/edit/[slug]/[id]", "ADMIN_EDIT_SLUG_ID"],
     ["admin/user/[id]", "ADMIN_USER_ID"],
     ["admin/music/artist/[artistId]", "ADMIN_MUSIC_ARTIST_ARTIST_ID"],
+    ["login.page", "LOGIN_PAGE"]
   ])("clean: %s , %s", (dirtyLink, cleanLink) => {
     expect(cleanLinkName(dirtyLink, true)).toBe(cleanLink);
   });

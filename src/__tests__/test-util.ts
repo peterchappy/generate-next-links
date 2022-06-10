@@ -22,6 +22,7 @@ export const MOCK_LINKS_ARRAY = function (API_LINKS: string[][] = []) {
     ["CATCHALL_MILES", "/[...miles]"],
     ["CUSTOMER_ID", "/[customerId]"],
     ["FAQ_LANGUAGE", "/faq/[language]"],
+    ["LOGIN", "/login"],
     ["OPTIONAL_CATCHALL_DAVIS", "/[[...davis]]"],
     ["POSTALT_OPTIONAL_CATCHALL_SLUG", "/post-alt/[[...slug]]"],
     ["POST_CATCHALL_SLUG", "/post/[...slug]"],

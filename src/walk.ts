@@ -8,8 +8,8 @@ export function walk(
   callback: (err: NodeJS.ErrnoException | null, results: string[]) => void
 ) {
   const regex = api
-    ? new RegExp(`^(.+\.(tsx|jsx)|.+\\${separator}api\\${separator}.+\.ts)$`)
-    : /^.+\.(tsx|jsx)$/;
+    ? new RegExp(`^(.+(?<!test)\.(tsx|jsx)|.+\\${separator}api\\${separator}.+\.ts)$`)
+    : /^.+(?<!test)\.(tsx|jsx)$/;
   let results: string[] = [];
   fs.readdir(target, (err, files) => {
     if (err) {
