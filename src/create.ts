@@ -46,7 +46,7 @@ export async function writeResult(
 ) {
   const name = path.join(
     config.out,
-    `links${config.omitTimestamp ? "" : "_" + Date.now()}.${
+    `${config.name.toLocaleLowerCase()}${config.omitTimestamp ? "" : "_" + Date.now()}.${
       config.exportJson ? "json" : "ts"
     }`
   );
